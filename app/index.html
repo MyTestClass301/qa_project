@@ -1,0 +1,40 @@
+<html>
+<head>
+<title>Task Manager</title>
+</head>
+
+<body>
+
+<h2>Task Manager</h2>
+
+<input id="taskInput" placeholder="New task">
+<button id="addBtn" onclick="addTask()">Add</button>
+
+<ul id="taskList"></ul>
+
+<script>
+
+function addTask() {
+
+    var taskText = document.getElementById("taskInput").value;
+
+    var li = document.createElement("li");
+    li.innerText = taskText;
+
+    var btn = document.createElement("button");
+    btn.innerText = "Delete";
+
+    btn.onclick = function() {
+        li.remove();
+    }
+
+    li.appendChild(btn);
+
+    document.getElementById("taskList").appendChild(li);
+
+}
+
+</script>
+
+</body>
+</html>
